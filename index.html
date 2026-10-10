@@ -4,36 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>⚔️ 出陣フォーム</title>
+<title>出陣くん｜出陣の門</title>
 <style>
-  body { font-family: -apple-system, "Hiragino Sans", sans-serif; background:#f6f5f2; color:#222; display:flex; min-height:100vh; align-items:center; justify-content:center; margin:0; }
-  main { text-align:center; padding:2rem; max-width:32rem; }
-  a.btn { display:inline-block; font-size:1.4rem; padding:1rem 2rem; border-radius:12px; background:#1f1f1f; color:#fff; text-decoration:none; }
-  a.btn:hover { background:#000; }
-  p.small { color:#666; font-size:.9rem; margin-top:1.5rem; line-height:1.6; }
-  code { background:#eee; padding:.1em .3em; border-radius:4px; }
-</style>
-</head>
-<body>
+:root{color-scheme:dark;--gold:#d2af67;--ink:#f4e5be;--mincho:"Yu Mincho","Hiragino Mincho ProN",serif}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;background:#0c110f;color:var(--ink);font:15px/1.8 -apple-system,"Hiragino Sans",sans-serif}
+body::before{content:"";position:fixed;inset:0;background:linear-gradient(90deg,#070b0a66,#070b0aee),url(assets/battlefield.png) center/cover;z-index:-1}
+.shell{max-width:1180px;margin:auto;padding:28px 32px 20px}.brand{display:flex;align-items:center;gap:15px;border-bottom:1px solid #b895484f;padding-bottom:18px}.brand img{width:58px;height:58px;object-fit:contain}.brand strong{display:block;font:800 28px var(--mincho);letter-spacing:.15em}.brand small,.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.28em}
+main{display:grid;grid-template-columns:1fr 1.15fr;align-items:center;min-height:calc(100svh - 185px);gap:32px}.warrior{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:480px;overflow:hidden;margin:0}.warrior::before{content:"出陣";position:absolute;top:60px;left:12%;writing-mode:vertical-rl;color:#d8b36b20;font:800 110px var(--mincho);letter-spacing:.1em}.warrior img{position:relative;width:100%;max-width:460px;max-height:640px;object-fit:contain;object-position:center bottom}.warrior figcaption{position:absolute;bottom:24px;left:0;border-left:2px solid var(--gold);padding:6px 14px;background:#0c110fbf;font-family:var(--mincho);letter-spacing:.1em}
+.briefing{padding:32px 0}.eyebrow{display:flex;align-items:center;gap:12px}.eyebrow::before{content:"";width:32px;height:1px;background:var(--gold)}h1{font:800 clamp(38px,5vw,68px)/1.25 var(--mincho);letter-spacing:.08em;margin:20px 0;text-shadow:0 3px 3px #000}.lead{color:#d9d4c4;margin-bottom:28px}.orders{padding:20px 24px;border:1px solid #aa8c484f;background:linear-gradient(135deg,#1e211be8,#111610e8)}.orders::before{content:"軍令";color:var(--gold);font:700 13px var(--mincho);letter-spacing:.22em}#msg{margin:12px 0 18px}.btn{display:block;width:100%;padding:16px 24px;text-align:center;color:#fff0c9;text-decoration:none;font:800 21px var(--mincho);letter-spacing:.08em;background:linear-gradient(#8f3028,#501b16);border:1px solid var(--gold);box-shadow:inset 0 0 0 3px #34120b,0 8px 24px #0006}.btn:hover{background:linear-gradient(#a63b31,#69251c)}.btn:focus-visible{outline:3px solid #f6df9d;outline-offset:4px}.btn[hidden]{display:none}.help{font-size:12px;color:#aaa998;margin:16px 0 0}.help b{color:#dfd5ba}ol{list-style:none;counter-reset:step;padding:0;display:flex;gap:16px;margin:26px 0;color:#bcbba9;font-size:12px}li{counter-increment:step;flex:1}li::before{content:"0" counter(step);display:block;color:var(--gold);font:700 17px var(--mincho);margin-bottom:4px}.safety{border-top:1px solid #b8954838;padding-top:15px;font-size:12px;color:#b4b4a4}footer{border-top:1px solid #b8954838;display:flex;justify-content:space-between;gap:12px;padding-top:12px;font-size:10px;color:#979a87;letter-spacing:.06em}a.back{color:#e0c384;text-decoration:none}
+@media(max-width:720px){.shell{padding:20px}main{grid-template-columns:1fr;gap:0;min-height:0}.warrior{grid-row:2;min-height:280px}.warrior img{height:330px;width:300px}.warrior::before{font-size:80px;top:20px}.briefing{padding:24px 0 8px}h1{font-size:42px}ol{gap:8px}footer{margin-top:20px;flex-wrap:wrap}}
+</style></head>
+<body><div class="shell">
+<header class="brand"><img src="assets/kamon.png" alt="AHEAD 七彩輪紋"><div><strong>出陣くん</strong><small>AHEAD CLAN · 出陣の門</small></div></header>
 <main>
-  <h1>⚔️ 出陣フォーム</h1>
-  <p id="msg">Macの出陣フォームを起動します。</p>
-  <a id="btn" class="btn" href="#">⚔️ 出陣フォームを開く</a>
-  <p class="small">「出陣フォーム.app で開きますか？」と聞かれたら「開く」を選んでください。<br>何も起きない場合は、Macに <code>出陣フォーム.app</code> が登録されているか確認してください。<br>このページは転送専用で、送信もデータ保存も行いません。</p>
-</main>
+<figure class="warrior"><img src="assets/commander.png" alt="出陣を待つAHEAD軍の武将"><figcaption>一歩踏み出せば、景色は変わる。</figcaption></figure>
+<section class="briefing"><div class="eyebrow">SORTIE COMMAND</div><h1>いざ、出陣。</h1><p class="lead">準備した一通を、あなたの手で届ける。</p>
+<div class="orders"><p id="msg" role="status" aria-live="polite">Macの出陣フォームを開きます。</p><a id="btn" class="btn" href="#">⚔ 出陣フォームを起動</a><p class="help">Macの確認が出たら<b>「開く」</b>を選んでください。<br>起動しない場合は「出陣フォーム.app」の登録を確認してください。</p></div>
+<ol><li>Macアプリを起動</li><li>入力内容を確認</li><li>送信はゴトウが実行</li></ol>
+<p class="safety">Notion・司令室どちらからでも、同じ出陣先をMacへ渡します。<br>この画面は起動専用です。送信・Notionの更新は行いません。<br>起動後の入力・送信結果は、Mac側の画面で確認してください。</p>
+<a class="back" href="http://127.0.0.1:8766/command-center.html">← このMacの司令室へ戻る</a>
+</section></main>
+<footer><span>AHEAD — デザインで、次の景色をつくる。</span><span>千里の道も一歩から</span></footer>
+</div>
 <script>
 (function () {
-  var id = (new URLSearchParams(location.search).get("page") || "").replace(/-/g, "").toLowerCase();
+  var params = new URLSearchParams(location.search);
+  var id = (params.get("page") || "").replace(/-/g, "").toLowerCase();
   var btn = document.getElementById("btn"), msg = document.getElementById("msg");
   if (!/^[0-9a-f]{32}$/.test(id)) {
-    msg.textContent = "ページIDが不正です。Notionの「⚔️ 出陣フォームで開く」から開いてください。";
-    btn.style.display = "none";
+    msg.textContent = "出陣先が指定されていません。Notionまたは司令室の出陣リンクから開いてください。";
+    btn.hidden = true;
     return;
   }
   var target = "shutsujin://open?page=" + id;
   btn.href = target;
-  setTimeout(function () { location.href = target; }, 300);
+  btn.addEventListener("click", function () {
+    msg.textContent = "Macの起動確認が出たら「開く」を選んでください。起動結果はMac側で確認してください。";
+  });
+  // プレビューでは外部アプリを起動しない。既存Notionリンクは従来どおり転送。
+  if (params.get("preview") === "1") {
+    msg.textContent = "デザイン確認用プレビューです。Macアプリは起動しません。";
+    btn.removeAttribute("href");
+    btn.addEventListener("click", function(e){e.preventDefault();});
+  } else {
+    setTimeout(function () { location.href = target; }, 300);
+  }
 })();
-</script>
-</body>
-</html>
+</script></body></html>
